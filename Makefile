@@ -16,7 +16,7 @@ ${NAME}:	${OBJ}
 
 all:	${NAME}
 
-bonus:	${NAME} ${OBJBONUS}
+bonus:	${OBJBONUS}
 	ar rc ${NAME} ${OBJBONUS}
 
 clean:
