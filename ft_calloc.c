@@ -14,9 +14,11 @@
 
 void    *ft_calloc(size_t nmb, size_t size)
 {
-    void *alloc;
+    void    *alloc;
 
     alloc = malloc(nmb * size);
+    if (!alloc)
+        return (NULL)
     ft_bzero(alloc,nmb);
     return (alloc);
 }
