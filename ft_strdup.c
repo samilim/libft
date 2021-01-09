@@ -6,9 +6,11 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:47:17 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/09 16:18:08 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/09 17:47:05 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {
