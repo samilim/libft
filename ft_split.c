@@ -2,98 +2,101 @@
 
 int f_charset(char c, char *charset)
 {
-                int i;
-
-                i = 0;
-                while (charset[i])
-                {
-                               if (c == charset[i])
-                                               return (1);
-                               i++;
-                }
-                return (0);
+  int i;
+  
+  i = 0;
+  while (charset[i])
+  {
+    if (c == charset[i])
+      return (1);
+    i++;
+  }
+  return (0);
 }
 
 int count_words(char *str, char *charset)
 {
-                int i;
-                int count;
-
-                i = 0;
-                while (str[i])
-                {
-                               while (str[i] && f_charset(str[i], charset))
-                                               i++;
-                               if (str[i] && !f_charset(str[i], charset))
-                                               count++;
-                               while (str[i] && !f_charset(str[i], charset))
-                                               i++;
-                }
-                return (count);
+  int i;
+  int count;
+  
+  i = 0;
+  while (str[i])
+  {
+    while (str[i] && f_charset(str[i], charset))
+      i++;
+    if (str[i] && !f_charset(str[i], charset))
+      count++;
+    while (str[i] && !f_charset(str[i], charset))
+      i++;
+  }
+  return (count);
 }
 
 char *splited_str(char *str, char *charset, int lecture)
 {
-                int i;
-                char *sub_str;
+  int i;
+  char *sub_str;
 
-                i = 0;
-                while (!f_charset(str[lecture + i], charset))
-                               i++;
-                sub_str = malloc(sizeof(char) * (i + 1));
-                i = 0;
-                while (!f_charset(str[lecture], charset))
-                {
-                               sub_str[i] = str[lecture];
-                               lecture++;
-                               i++;
-                }
-                sub_str[i] = '\0';
-                return (sub_str);
+  i= 0;
+  while (!f_charset(str[lecture + i], charset))
+    i++;
+  sub_str = malloc(sizeof(char) * (i + 1));
+  i = 0;
+  while (!f_charset(str[lecture], charset))
+  {
+    sub_str[i] = str[lecture];
+    lecture++;
+    i++;
+  }
+  sub_str[i] = '\0';
+  return (sub_str);
 }
 
 char **ft_split(char *str, char *charset)
 {
-                char **dest;
-                int i;
-                int d;
-                int nb_words;
-
-                nb_words = count_words(str, charset);
-                if ((!str) || !(dest = malloc(sizeof(char*) * (nb_words + 1))))
-                    return (NULL);
-                dest[nb_words] = NULL;
-                i = 0;
-                d = 0;
-                while (str[i])
-                {
-                    while (str[i] && f_charset(str[i], charset))
-                                               i++;
-                               if (d < nb_words)
-                               {
-                                               dest[d] = splited_str(str, charset, i);
-                                               d++;
-                               }
-                               while (str[i] && !f_charset(str[i], charset))
-                                               i++;
-                }
-                return (dest);
+  char **dest;
+  int i;
+  int d;
+  int nb_words;
+  
+  nb_words = count_words(str, charset);
+  if ((!str) || !(dest = malloc(sizeof(char*) * (nb_words + 1))))
+    return (NULL);
+  dest[nb_words] = NULL;
+  i = 0;
+  d = 0;
+  while (str[i])
+  {
+    while (str[i] && f_charset(str[i], charset))
+      i++;
+    if (d < nb_words)
+    {
+      dest[d] = splited_str(str, charset, i);
+      d++;
+    }
+    while (str[i] && !f_charset(str[i], charset))
+      i++;
+  }
+  return (dest);
 }
 
+
+
+/*
 int          main()
 {
-                char *str = "    hey coucou hello hibou";
-                char **split;
-                int i;
+  char *str = "    hey coucou hello hibou";
+  char **split;
+  int i;
 
-                i = 0;
-                split = ft_split(str, "");
-                while (split[i])
-                {
-                               printf("i = %d, split = %s\n", i, split[i]);
-                               i++;
-                }
-                return (0);
+  i = 0;
+  split = ft_split(str, "");
+  while (split[i])
+  {
+    printf("i = %d, split = %s\n", i, split[i]);
+    i++;
+  }
+  return (0);
 }
 
 #include <unistd.h>
@@ -197,7 +200,6 @@ free(array);
 return (0);
 }
 
-/*
 #include <stdio.h>
 int main()
 {
