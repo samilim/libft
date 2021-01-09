@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int d;
-	unsigned int taille;
+	size_t i;
+	size_t d;
+	size_t taille;
 
 	i = 0;
 	d = 0;
