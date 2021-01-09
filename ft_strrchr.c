@@ -15,14 +15,16 @@
 char       *ft_strrchr(const char *str, int ch)
 {
     unsigned int i;
+    char    *c;
 
+    c = (char *)str;
     i = 0;
     while(str[i])
         i++;
     while(i >= 0)
     {
-        if(str[i] == (unsigned char)ch)
-            return (str[i]);
+        if(str[i] == (char)ch)
+            return (c[i]);
         i--;
     }
     return (NULL);
