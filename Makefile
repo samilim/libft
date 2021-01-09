@@ -20,7 +20,7 @@ bonus:	${OBJBONUS}
 	ar rc ${NAME} ${OBJBONUS}
 
 clean:
-		${RM} ${OBJ}
+		${RM} ${OBJ} ${OBJBONUS}
 
 fclean:		clean
 			${RM} ${NAME}
