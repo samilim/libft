@@ -22,7 +22,8 @@ void *memchr(const void *mem, int ch, size_t n)
     while (i < n)
     {
         if(c[i] == (unsigned char)ch)
-            return (c[i]);
+            return ((void *)c[i]);
+        i++;
     }
     return (NULL);
 }
