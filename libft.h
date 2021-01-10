@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:46:03 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/09 18:46:15 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/10 16:38:40 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void    ft_putchar_fd(char c, int fd);
 void    ft_putstr_fd(char *s, int fd);
 void    ft_putendl_fd(char *s, int fd);
-void    ft_putnbr_fd(int n, int fd);
+void    ft_putnbr_fd(int nb, int fd);
 t_list  *ft_lstnew(void *content);
 void    ft_lstadd_front(t_list **alst, t_list *new);
 int     ft_lstsize(t_list *lst);

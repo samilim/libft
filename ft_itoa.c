@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 16:34:00 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 16:36:07 by salimon          ###   ########.fr       */
+/*   Created: 2021/01/09 18:55:31 by salimon           #+#    #+#             */
+/*   Updated: 2021/01/09 19:03:19 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int     ft_count_(int n)
 {
-  unsigned int i;
-  char *res;
-  
-  i = 0;
-  if (!s || !(res = malloc(sizeof(char) * ft_strlen(s) + 1)))
-    return (NULL);
-  while (res[i++])
-    res[i] =  (*f)(i, s[i]);
-  res[i] = '\0';
-  return (res);
+    int i;
+
+    i = 1;
+    if (nb < 0)
+        nb = nb * (-1);
+    while ((n / 10) > 10)
+        i++;
+    return (i);
+}
+
+char    *ft_itoa(int n)
+{
+    
 }

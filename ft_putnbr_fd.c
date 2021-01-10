@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/10 16:34:41 by salimon           #+#    #+#             */
+/*   Updated: 2021/01/10 16:40:52 by salimon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void    ft_putnbr_fd(int n, int fd);
+void    ft_putnbr_fd(int nb, int fd)
 {
 	if (nb == -2147483648)
 	{
@@ -15,8 +27,8 @@ void    ft_putnbr_fd(int n, int fd);
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr (nb / 10);
-		ft_putchar_fd (nb % 10 + '0');
+		ft_putnbr_fd ((nb / 10),fd);
+		ft_putchar_fd (((nb % 10 + '0'),fd));
 	}
 	else
 	    ft_putchar_fd (nb + '0');
