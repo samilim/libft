@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 17:43:40 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/08 17:45:33 by salimon          ###   ########.fr       */
+/*   Created: 2021/01/10 19:10:39 by salimon           #+#    #+#             */
+/*   Updated: 2021/01/10 19:11:14 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_toupper(int c)
+int		ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
-        c = c - 32;
-    return (c);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }
