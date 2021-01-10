@@ -6,14 +6,14 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:38:16 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/08 17:40:45 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/10 18:42:35 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isascii(int c)
+int		ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-        return (1);
-    else
-        return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }
