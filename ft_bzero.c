@@ -21,4 +21,5 @@ void	ft_bzero(void *mem, size_t n)
 	c = (unsigned char *)mem;
 	while (i++ < n)
 		c[i] = 0;
+	mem = c;
 }
