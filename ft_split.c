@@ -12,14 +12,6 @@
 
 #include "libft.h"
 
-static  int ft_is_c(char const to_compare, char c)
-{
-  if (to_compare == c)
-    return (1);
-  else
-    return (0);
-}
-
 static  int ft_count_world(char const *str, char c)
 {
   unsigned int  i;
@@ -29,32 +21,65 @@ static  int ft_count_world(char const *str, char c)
   count = 0;
   while (str[i])
   {
-    while (ft_is_c(str[i], c))
+    while (str[i] == c))
       i++;
-    if (str[i] && !(ft_is_c(str[i], c))
+    if (str[i] && str[i] != c)
       count++;
-    while (ft_is_c(str[i], c) && str[i])
+    while (str[i] && str[i] != c)
       i++;
   }
   return (count);
+}
+        
+static  char  *ft_create_sub_tab(char tab **tab, char const *str, char c , int istr)
+{
+  char            *sub_tab;
+  unsigned int         len;
+  unsigned int        fill;
+  
+  len = 0;
+  fill = 0;
+  while (str[istr] && str[istr] != c))
+  {
+    len++;
+    istr++;
+  }
+  if (!(sub_tab = malloc(sizeof(char) * (len + 1))))
+    return (NULL);
+  while (str[istr] && str[istr] != c)
+  {
+    sub_tab[fill] = str[istr];
+    istr++;
+    fill++;
+  }
+  sub_tab[fill] = '\0';
+  return (sub_tab);
 }
 
 char  **ft_split(char const *str, char c)
 {
   char          **tab;
-  unsigned int  i;
-  unsigned int  index;
+  unsigned int  istr;
+  unsigned int  itab;
   
-  i = 0;
-  index = 0;
+  istr = 0;
+  itab = 0;
   if (!str)
     return (NULL);
   if (!(tab = malloc(sizeof(char*) * (ft_count_world(str, c) + 1))))
     return (NULL);
-  while (*tab[i++])
+  while (tab[itab + 1])
   {
-    while ()
+    while (str[istr] && str[istr] == c))
+           istr++;
+    if (!ft_create_sub_tab(str, c, istr)
+        return (NULL);
+    else
+        tab[itab] = ft_create_sub_tab(tab, str, c, istr);
+    itab++;
+    while (str[istr] && str[istr] != c)
+        istr++;
   }
-  *tab[i] = '\0';
+  tab[itab] = NULL;
   return (tab);
 }
