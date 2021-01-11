@@ -83,3 +83,92 @@ char  **ft_split(char const *str, char c)
   tab[itab] = NULL;
   return (tab);
 }
+
+
+
+
+
+BIS
+
+
+
+
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+static int ft_count_words(char const *str, char c)
+{
+	int i;
+	int count;
+
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i] && str[i] != c)
+			count++;
+		while (str[i] && str[i] != c)
+			i++;
+	}
+	return (count);
+}
+
+static char *ft_splited_str(char const *str, char c, int lecture)
+{
+	int i;
+	char *sub_str;
+
+	i = 0;
+	while (str[lecture + i] != c)
+		i++;
+	if (!(sub_str = malloc(sizeof(char) * (i + 1))))
+	    return (NULL);
+	i = 0;
+	while (str[lecture] != c)
+	{
+		sub_str[i] = str[lecture];
+		lecture++;
+		i++;
+	}
+	sub_str[i] = '\0';
+	return (sub_str);
+}
+
+char **ft_split(char const *str, char c)
+{
+	char **tab;
+	int istr;
+	int itab;
+
+	if (!str)
+	    return (NULL);
+	if (!(tab = malloc(sizeof(char*) * (ft_count_words(str, c) + 1))))
+	    return (NULL);
+	tab[ft_count_words(str, c)] = NULL;
+	istr = 0;
+	itab = 0;
+	while (str[istr])
+	{
+	    while (str[istr] && str[istr] == c)
+			istr++;
+		if (str[istr] && (itab < ft_count_words(str, c)))
+		{
+		    if (!ft_splited_str(str, c, istr))
+		        return (NULL);
+			tab[itab] = ft_splited_str(str, c, istr);
+			itab++;
+		}
+		while (str[istr] && str[istr] != c)
+			istr++;
+	}
+	return (tab);
+}
+
+
+int main()
+{
+    printf("%s",ft_split("hellou hibou heyy hello", 'b'));
+    return 0;
+}
