@@ -72,7 +72,7 @@ char  **ft_split(char const *str, char c)
   {
     while (str[istr] && str[istr] == c)
            istr++;
-    if (!ft_create_sub_tab(str, c, istr)
+    if (!(ft_create_sub_tab(str, c, istr)))
         return (NULL);
     else
         tab[itab] = ft_create_sub_tab(str, c, istr);
