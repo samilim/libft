@@ -21,7 +21,7 @@ static  int ft_count_world(char const *str, char c)
   count = 0;
   while (str[i])
   {
-    while (str[i] == c))
+    while (str[i] && str[i] == c)
       i++;
     if (str[i] && str[i] != c)
       count++;
@@ -31,7 +31,7 @@ static  int ft_count_world(char const *str, char c)
   return (count);
 }
         
-static  char  *ft_create_sub_tab(char tab **tab, char const *str, char c , int istr)
+static  char  *ft_create_sub_tab(char const *str, char c , int istr)
 {
   char            *sub_tab;
   unsigned int         len;
@@ -39,7 +39,7 @@ static  char  *ft_create_sub_tab(char tab **tab, char const *str, char c , int i
   
   len = 0;
   fill = 0;
-  while (str[istr] && str[istr] != c))
+  while (str[istr] && str[istr] != c)
   {
     len++;
     istr++;
@@ -70,12 +70,12 @@ char  **ft_split(char const *str, char c)
     return (NULL);
   while (tab[itab + 1])
   {
-    while (str[istr] && str[istr] == c))
+    while (str[istr] && str[istr] == c)
            istr++;
     if (!ft_create_sub_tab(str, c, istr)
         return (NULL);
     else
-        tab[itab] = ft_create_sub_tab(tab, str, c, istr);
+        tab[itab] = ft_create_sub_tab(str, c, istr);
     itab++;
     while (str[istr] && str[istr] != c)
         istr++;
