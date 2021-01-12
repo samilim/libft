@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static  int ft_count_world(char const *str, char c)
+static  int ft_count_word(char const *str, char c)
 {
   unsigned int  i;
   unsigned int  count;
@@ -66,7 +66,7 @@ char  **ft_split(char const *str, char c)
   itab = 0;
   if (!str)
     return (NULL);
-  if (!(tab = malloc(sizeof(char*) * (ft_count_world(str, c) + 1))))
+  if (!(tab = malloc(sizeof(char*) * (ft_count_word(str, c) + 1))))
     return (NULL);
   while (tab[itab + 1])
   {
@@ -91,11 +91,6 @@ char  **ft_split(char const *str, char c)
 BIS
 
 
-
-
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 static int ft_count_words(char const *str, char c)
 {
@@ -142,9 +137,7 @@ char **ft_split(char const *str, char c)
 	int istr;
 	int itab;
 
-	if (!str)
-	    return (NULL);
-	if (!(tab = malloc(sizeof(char*) * (ft_count_words(str, c) + 1))))
+	if (!str || !(tab = malloc(sizeof(char*) * (ft_count_words(str, c) + 1))))
 	    return (NULL);
 	tab[ft_count_words(str, c)] = NULL;
 	istr = 0;
@@ -169,6 +162,6 @@ char **ft_split(char const *str, char c)
 
 int main()
 {
-    printf("%s",ft_split("hellou hibou heyy hello", 'b'));
+    ft_split("hellou hibou heyy hello", 'h');
     return 0;
 }
