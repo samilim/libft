@@ -14,8 +14,7 @@
 
 #include <stdio.h>
 
-
-int     ft_count(int n)
+static int     ft_count(int n)
 {
     int i;
     
@@ -33,14 +32,11 @@ int     ft_count(int n)
     return (i);
 }
 
-char *ft_create_nb(char *nb, int n)
+static char *ft_create_nb(char *nb, int n, int i)
 {
-	int i;
-	
-	i = 0;
 	if (n >= 10)
 	{
-	    ft_create_nb(nb[i++], n / 10);
+	    ft_create_nb(nb, n / 10, i++);
 		nb[i] = (n % 10 + '0');
 	}
 	else
@@ -50,27 +46,27 @@ char *ft_create_nb(char *nb, int n)
 
 char    *ft_itoa(int n)
 {
-    unsigned int i;
+    unsigned int    i;
     char         *nb;
     
+    if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
     if (!(nb = malloc(sizeof(char) * (ft_count(n)) + 1)))
         return (NULL);
-    while (nb[i])
+    i = 0;
+    if (n < 0)
     {
-        if (n < 0)
-        {
-            nb[i] = '-';
-            i++;
-            n = n * -1;
-        }
-        nb[ft_count(n)] = '\0';
-        return (ft_create_nb(nb, n));
+        nb[i] = '-';
+        i++;
+        n = n * -1;
     }
+    nb[ft_count(n) + 1] = '\0';
+    return (ft_create_nb(nb, n, i));
 }
 
 int main()
 {
-    printf("%d",ft_count());
+    printf("%s",ft_itoa(-2147483648));
 
     return 0;
 }
