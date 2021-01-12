@@ -12,7 +12,19 @@
 
 #include "libft.h"
 
-#include <stdio.h>
+/*
+static char *ft_create_nb(char *nb, int n, int i)
+{
+	if (n >= 10)
+	{
+	    ft_create_nb(nb, n / 10, i++);
+		nb[i] = (n % 10 + '0');
+	}
+	else
+	    nb[i] = (n + '0');
+    return (nb);
+}
+*/
 
 static int     ft_count(int n)
 {
@@ -32,15 +44,17 @@ static int     ft_count(int n)
     return (i);
 }
 
-static char *ft_create_nb(char *nb, int n, int i)
+static char *ft_create_nb(char *nb, int n, unsigned int i)
 {
-	if (n >= 10)
-	{
-	    ft_create_nb(nb, n / 10, i++);
-		nb[i] = (n % 10 + '0');
-	}
-	else
-	    nb[i] = (n + '0');
+    unsigned int len;
+    
+    len = ft_count(n);
+    while (len > i)
+    {
+	    nb[len - 1] = n % 10 + '0';
+		n = n / 10;
+		len--;
+    }   
     return (nb);
 }
 
@@ -63,10 +77,10 @@ char    *ft_itoa(int n)
     nb[ft_count(n) + 1] = '\0';
     return (ft_create_nb(nb, n, i));
 }
-
+/*
 int main()
 {
-    printf("%s",ft_itoa(-2147483648));
+    printf("%s",ft_itoa(2143647));
 
     return 0;
-}
+}*/
