@@ -6,16 +6,16 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:46:42 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/09 17:46:21 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/12 18:47:14 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strnstr(const char *str, const char *to_find, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	size_t botte;
-	size_t aiguille;
+	size_t	botte;
+	size_t	aiguille;
 	char	*cstr;
 	char	*cto_find;
 

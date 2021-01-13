@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 16:34:49 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 16:36:07 by salimon          ###   ########.fr       */
+/*   Created: 2021/01/12 18:27:54 by salimon           #+#    #+#             */
+/*   Updated: 2021/01/12 18:28:13 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void  ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-  ft_putstr_fd(s, fd);
-  ft_putchar_fd('\n', fd);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

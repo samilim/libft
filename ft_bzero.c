@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:48:06 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 18:16:06 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/13 17:03:08 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_bzero(void *mem, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*c;
 
 	i = 0;
 	c = (unsigned char *)mem;
-	while (i++ < n)
+	while (i < n)
+	{
 		c[i] = 0;
+		i++;
+	}
 	mem = c;
 }

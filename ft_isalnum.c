@@ -6,9 +6,11 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:36:05 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 18:38:38 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/13 16:36:05 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_isalnum(int c)
 {

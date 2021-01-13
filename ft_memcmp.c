@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:18:41 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 19:06:14 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/13 18:06:57 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*cs1;
 	unsigned char	*cs2;
 
@@ -23,7 +23,11 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	cs2 = (unsigned char *)s2;
 	if (n == 0)
 		return (0);
-	while (i < n && cs1[i] == cs2[i] && cs1[i] != '\0' && cs2[i] != '\0')
+	while (i < n && (cs1[i] == cs2[i] && cs1[i] && cs2[i]))
+	{
+		if ((i == n - 1) && (cs1[i] == cs2[i] && cs1[i] && cs2[i]))
+			return (cs1[i] - cs2[i]);
 		i++;
+	}
 	return (cs1[i] - cs2[i]);
 }

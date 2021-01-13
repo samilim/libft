@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:04:31 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 18:58:09 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/12 18:24:13 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t		i;
-	char	*cd;
-	char	*cs;
+	char		*cd;
+	char		*cs;
 
 	i = 0;
 	cd = (char *)dest;

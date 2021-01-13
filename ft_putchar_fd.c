@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 16:35:51 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 16:40:52 by salimon          ###   ########.fr       */
+/*   Created: 2021/01/12 18:25:33 by salimon           #+#    #+#             */
+/*   Updated: 2021/01/12 18:26:20 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-  write(fd, &c, 1);
+	write(fd, &c, 1);
 }

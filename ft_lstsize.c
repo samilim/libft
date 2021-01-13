@@ -6,19 +6,21 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 16:42:32 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 16:42:34 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/12 18:21:36 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_lstsize(t_list *lst)
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
-  unsigned int i;
-  
-  i = 0;
-  while (lst)
-  {
-    lst = lst -> next;
-    i++;
-  }
-  return (i);
+	unsigned int i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
