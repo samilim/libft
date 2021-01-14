@@ -30,11 +30,11 @@ static int		ft_count(int n)
 	return (i);
 }
 
-static char		*ft_create_nb(char *nb, int n, unsigned int i)
+static char		*ft_create_nb(char *nb, int n, unsigned int i, unsigned int count)
 {
 	unsigned int len;
 
-	len = ft_count(n);
+	len = count;
 	while (len > i)
 	{
 		nb[len - 1] = n % 10 + '0';
@@ -44,14 +44,18 @@ static char		*ft_create_nb(char *nb, int n, unsigned int i)
 	return (nb);
 }
 
+
+
 char			*ft_itoa(int n)
 {
 	unsigned int	i;
+	unsigned int    count;
 	char			*nb;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (!(nb = malloc(sizeof(char) * (ft_count(n)) + 1)))
+	count = ft_count(n);
+	if (!(nb = malloc(sizeof(char) * (count + 1))))
 		return (NULL);
 	i = 0;
 	if (n < 0)
@@ -60,6 +64,6 @@ char			*ft_itoa(int n)
 		i++;
 		n = n * -1;
 	}
-	nb[ft_count(n) + 1] = '\0';
-	return (ft_create_nb(nb, n, i));
+	nb[count + 1] = '\0';
+	return (ft_create_nb(nb, n, i, count));
 }
