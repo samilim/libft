@@ -53,7 +53,7 @@ char			*ft_itoa(int n)
 	char			*nb;
 
 	if (n == -2147483648)
-		return (ft_strdup("-21474836488"));
+		return (ft_strdup("-2147483648"));
 	count = ft_count(n);
 	if (!(nb = malloc(sizeof(char) * (count + 1))))
 		return (NULL);
