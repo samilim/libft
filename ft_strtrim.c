@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 18:45:49 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/14 17:16:14 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/15 18:45:23 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 
 	if (!set)
 		return ((char *)s1);
+	if (!s1)
+		return (NULL);
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1) - 1;
