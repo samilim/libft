@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 18:14:55 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/13 16:43:58 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/15 15:52:32 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strchr(const char *str, int ch)
 			return ((char *)&str[i]);
 		i++;
 	}
+	if (str[i] == (char)ch)
+		return ((char *)&str[i]);
 	return (NULL);
 }

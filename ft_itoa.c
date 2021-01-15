@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 18:55:31 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/12 18:01:12 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/14 18:43:45 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static int		ft_count(int n)
 	return (i);
 }
 
-static char		*ft_create_nb(char *nb, int n, unsigned int i, unsigned int count)
+static char		*ft_create_nb(char *nb, int n, unsigned int i,
+				unsigned int count)
 {
 	unsigned int len;
 
@@ -44,18 +45,16 @@ static char		*ft_create_nb(char *nb, int n, unsigned int i, unsigned int count)
 	return (nb);
 }
 
-
-
 char			*ft_itoa(int n)
 {
 	unsigned int	i;
-	unsigned int    count;
+	unsigned int	count;
 	char			*nb;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	count = ft_count(n);
-	if (!(nb = malloc(sizeof(char) * (count + 1))))
+	if (!(nb = (char *)malloc(sizeof(char) * (count + 1))))
 		return (NULL);
 	i = 0;
 	if (n < 0)
@@ -64,6 +63,6 @@ char			*ft_itoa(int n)
 		i++;
 		n = n * -1;
 	}
-	nb[count + 1] = '\0';
+	nb[count] = '\0';
 	return (ft_create_nb(nb, n, i, count));
 }

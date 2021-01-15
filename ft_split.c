@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 16:34:20 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/13 16:43:23 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/15 16:14:36 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ static char		*ft_splited_str(char const *str, char c, int lecture)
 	char	*sub_str;
 
 	i = 0;
-	while (str[lecture + i] != c)
+	while (str[lecture + i] && str[lecture + i] != c)
 		i++;
 	if (!(sub_str = malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	i = 0;
-	while (str[lecture] != c)
+	while (str[lecture] && str[lecture] != c)
 	{
 		sub_str[i] = str[lecture];
 		lecture++;

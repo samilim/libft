@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 18:50:33 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/13 15:56:31 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/15 16:06:47 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	cs2 = (unsigned char *)s2;
 	if (n == 0)
 		return (0);
-	while (i < n && cs1[i] == cs2[i] && cs1[i] != '\0' && cs2[i] != '\0')
+	while (i < n - 1 && cs1[i] == cs2[i] && cs1[i] != '\0' && cs2[i] != '\0')
 		i++;
 	return (cs1[i] - cs2[i]);
 }

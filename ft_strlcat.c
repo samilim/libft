@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:46:08 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/13 18:23:35 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/15 15:19:40 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		d++;
 	while (src[taille] != '\0')
 		taille++;
+	if (!size)
+		return (taille);
 	if (size <= d)
 		taille = taille + size;
 	else
