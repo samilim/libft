@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:47:03 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 18:33:32 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/16 13:20:27 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ void	*ft_calloc(size_t nmb, size_t size)
 {
 	void	*alloc;
 
-	alloc = malloc(nmb * size);
-	if (!alloc)
+	if (!(alloc = (char *)malloc(nmb * size)))
 		return (NULL);
-	ft_bzero(alloc, nmb);
+	ft_bzero(alloc, nmb * size);
 	return (alloc);
 }
