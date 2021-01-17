@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 18:13:31 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/17 14:55:19 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/17 15:12:15 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	lst = lst->next;
 	while (lst)
 	{
-		f_lst = (*f)(lst->content);
+		f_lst = ft_lstnew((*f)(lst->content));
 		if (!f_lst)
 		{
 			ft_lstclear(&lst, (*del));
