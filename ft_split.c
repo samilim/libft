@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 16:34:20 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/15 16:14:36 by salimon          ###   ########.fr       */
+/*   Updated: 2021/01/17 13:39:42 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ char			**ft_split(char const *str, char c)
 			istr++;
 		if (str[istr] && (itab < ft_count_words(str, c)))
 		{
-			if (!ft_splited_str(str, c, istr))
-				return (NULL);
 			tab[itab] = ft_splited_str(str, c, istr);
 			itab++;
 		}
