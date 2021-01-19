@@ -52,6 +52,17 @@ static char		*ft_splited_str(char const *str, char c, int lecture)
 	return (sub_str);
 }
 
+
+/*
+static char	**ft_free_all(char **tab, int itab)
+{
+	while (itab >= 0)
+		free(tab[itab--]);
+	free(tab);
+	return (NULL);
+}
+*/
+
 char			**ft_split(char const *str, char c)
 {
 	char	**tab;
@@ -69,6 +80,8 @@ char			**ft_split(char const *str, char c)
 			istr++;
 		if (str[istr] && (itab < ft_count_words(str, c)))
 		{
+			/*if (!(tab[itab] = ft_splited_str(str,c,istr)))
+				return (ft_free_all(tab, itab));*/
 			tab[itab] = ft_splited_str(str, c, istr);
 			itab++;
 		}
