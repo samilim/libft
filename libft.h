@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 18:25:14 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/12 17:04:32 by salimon          ###   ########.fr       */
+/*   Updated: 2021/11/08 09:15:43 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ size_t				ft_strlcat(char *dest, const char *src, size_t size);
 char				*ft_strnstr(const char *str, const char *to_find, size_t n);
 int					ft_atoi(const char *nb);
 void				*ft_calloc(size_t nmb, size_t size);
+int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strdup(const char *src);
 char				*ft_substr(char const *str, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
