@@ -6,11 +6,11 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:47:16 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 18:14:43 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:29:11 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *nb)
+int	ft_atoi(const char *nb)
 {
 	unsigned int	i;
 	int				signe;

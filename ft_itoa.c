@@ -6,15 +6,15 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 18:55:31 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/14 18:43:45 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:33:34 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_count(int n)
+static int	ft_count(int n)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (n < 0)
@@ -30,10 +30,10 @@ static int		ft_count(int n)
 	return (i);
 }
 
-static char		*ft_create_nb(char *nb, int n, unsigned int i,
+static char	*ft_create_nb(char *nb, int n, unsigned int i,
 				unsigned int count)
 {
-	unsigned int len;
+	unsigned int	len;
 
 	len = count;
 	while (len > i)
@@ -45,7 +45,7 @@ static char		*ft_create_nb(char *nb, int n, unsigned int i,
 	return (nb);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	unsigned int	i;
 	unsigned int	count;
@@ -54,7 +54,8 @@ char			*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	count = ft_count(n);
-	if (!(nb = (char *)malloc(sizeof(char) * (count + 1))))
+	nb = (char *)malloc(sizeof(char) * (count + 1));
+	if (!nb)
 		return (NULL);
 	i = 0;
 	if (n < 0)

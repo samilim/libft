@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:23:52 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/10 19:08:17 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:37:28 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i])

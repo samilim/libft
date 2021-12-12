@@ -6,16 +6,30 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 16:34:20 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/17 13:39:42 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 04:00:37 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_count_words(char const *str, char c)
+char	**free_split(char **tab)
 {
-	int i;
-	int count;
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab[i]);
+	return (NULL);
+}
+
+static int	ft_count_words(char const *str, char c)
+{
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -31,7 +45,7 @@ static int		ft_count_words(char const *str, char c)
 	return (count);
 }
 
-static char		*ft_splited_str(char const *str, char c, int lecture)
+static char	*ft_splited_str(char const *str, char c, int lecture)
 {
 	int		i;
 	char	*sub_str;
@@ -39,7 +53,8 @@ static char		*ft_splited_str(char const *str, char c, int lecture)
 	i = 0;
 	while (str[lecture + i] && str[lecture + i] != c)
 		i++;
-	if (!(sub_str = malloc(sizeof(char) * (i + 1))))
+	sub_str = malloc(sizeof(char) * (i + 1));
+	if (!sub_str)
 		return (NULL);
 	i = 0;
 	while (str[lecture] && str[lecture] != c)
@@ -52,24 +67,14 @@ static char		*ft_splited_str(char const *str, char c, int lecture)
 	return (sub_str);
 }
 
-
-/*
-static char	**ft_free_all(char **tab, int itab)
-{
-	while (itab >= 0)
-		free(tab[itab--]);
-	free(tab);
-	return (NULL);
-}
-*/
-
-char			**ft_split(char const *str, char c)
+char	**ft_split(char const *str, char c)
 {
 	char	**tab;
 	int		istr;
 	int		itab;
 
-	if (!str || !(tab = malloc(sizeof(char*) * (ft_count_words(str, c) + 1))))
+	tab = malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
+	if (!str || !tab)
 		return (NULL);
 	tab[ft_count_words(str, c)] = NULL;
 	istr = 0;
@@ -80,9 +85,9 @@ char			**ft_split(char const *str, char c)
 			istr++;
 		if (str[istr] && (itab < ft_count_words(str, c)))
 		{
-			/*if (!(tab[itab] = ft_splited_str(str,c,istr)))
-				return (ft_free_all(tab, itab));*/
 			tab[itab] = ft_splited_str(str, c, istr);
+			if (!(tab[itab]))
+				return (free_split(tab));
 			itab++;
 		}
 		while (str[istr] && str[istr] != c)

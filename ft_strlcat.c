@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:46:08 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/15 17:33:32 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:39:00 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t i;
-	size_t d;
-	size_t taille;
+	size_t	i;
+	size_t	d;
+	size_t	taille;
 
 	i = 0;
 	d = ft_strlen(dest);

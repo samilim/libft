@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 16:35:37 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/12 18:18:27 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:36:59 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*elem;
 
-	if (!(elem = malloc(sizeof(t_list))))
+	elem = malloc(sizeof(t_list));
+	if (!elem)
 		return (NULL);
 	elem->content = content;
 	elem->next = NULL;

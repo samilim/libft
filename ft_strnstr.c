@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:46:42 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/15 16:05:02 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:35:58 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	while (cstr[botte] != '\0' && botte < n)
 	{
 		aiguille = 0;
-		while (cstr[botte + aiguille] == cto_find[aiguille] &&
-		(botte + aiguille) < n)
+		while (cstr[botte + aiguille] == cto_find[aiguille]
+			&& (botte + aiguille) < n)
 		{
 			if (cto_find[aiguille + 1] == '\0')
 				return (&cstr[botte]);

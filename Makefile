@@ -28,7 +28,6 @@ SRCS 		= ft_bzero.c \
 			ft_tolower.c \
 			ft_calloc.c \
 			ft_atoi.c \
-			ft_strcmp.c \
 			ft_strnstr.c \
 			ft_substr.c \
 			ft_strjoin.c \

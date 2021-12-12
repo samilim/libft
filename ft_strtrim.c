@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 18:45:49 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/16 15:23:49 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:38:21 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_isset(const char *set, char c)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned int	i;
 	unsigned int	start;
@@ -36,7 +36,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (ft_isset(set, s1[end]) && end > start)
 		end--;
-	if (!(res = malloc(sizeof(char) * (end - start) + 2)))
+	res = malloc(sizeof(char) * (end - start) + 2);
+	if (!res)
 		return (NULL);
 	while (start <= end)
 		res[i++] = s1[start++];

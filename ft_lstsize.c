@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 16:42:32 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/12 18:21:36 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:40:13 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (lst)

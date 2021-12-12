@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 17:48:12 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/15 17:39:11 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:42:06 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	i = 0;
 	if (!str)
 		return (NULL);
-	if (!(res = malloc(sizeof(char) * (len + 1))))
+	res = malloc(sizeof(char) * (len + 1));
+	if (!res)
 		return (NULL);
 	res[0] = '\0';
 	if (start > ft_strlen(str))

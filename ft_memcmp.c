@@ -6,13 +6,13 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:18:41 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/16 13:16:50 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:39:44 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*cs1;

@@ -6,7 +6,7 @@
 /*   By: salimon <salimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 18:14:55 by salimon           #+#    #+#             */
-/*   Updated: 2021/01/15 15:52:32 by salimon          ###   ########.fr       */
+/*   Updated: 2021/12/12 03:40:06 by salimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *str, int ch)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i])
